@@ -1,8 +1,50 @@
-body, html{
-  margin: 0;
-  padding: 0;
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=latin-ext');
+
+:root{
+  --color-primary: #000000;
+  --color-secondary: #FF0000;
 }
 
-html{
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility
+}
+
+*,:focus,:hover {
+  outline: none!important;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+:root {
+  font-size: 62.5%
+}
+
+body,html {
+  padding: 0;
+  margin: 0;
+  width: 100%
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: normal;
+  background: #fff;
+  color: var(--color-primary);
+  overflow-x: hidden;
   overflow-y: scroll;
+  min-height: 100vh
+}
+
+body.no-scroll {
+  overflow: hidden
+}
+
+@media (min-width: 769px) {
+  body.no-scroll {
+    padding-right:17px
+  }
 }

@@ -12,23 +12,29 @@ const Guarded = React.lazy( () => {
     return import('../views/Guarded');
 });
 
+export const paths = {
+    home: '/',
+    auth: '/auth',
+    guarded: '/guarded',
+};
+
 export default (store) => {
     
     // public routes
     let routes = [
-        <Route path="/auth" render={(props) => <Auth {...props}/>} />,
-        <Route path="/" exact component={Home} />
+        <Route key={paths.auth} path={paths.auth} render={(props) => <Auth {...props}/>} />,
+        <Route key={paths.home} path={paths.home} exact component={Home} />
     ];
 
     // guarded routes
     if( store.getState().auth.token !== null ) {
         routes = routes.concat([
-            <Route path="/guarded" render={(props) => <Guarded {...props}/>}/>,
+            <Route key={paths.guarded} path={paths.guarded} render={(props) => <Guarded {...props}/>}/>,
         ]);
     }
 
     // catch all route
-    routes.push( <Route component={Error404} /> );
+    routes.push( <Route key="404" component={Error404} /> );
 
     return routes;
 };

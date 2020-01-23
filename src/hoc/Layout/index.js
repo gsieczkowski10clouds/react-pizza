@@ -1,10 +1,19 @@
 import React from 'react';
 
+import Topbar from '../../components/Topbar';
+import Footer from '../../components/Footer';
+
 function Layout(props){
     return(
-        <main>
-            {props.children}
-        </main>
+        <>
+            <Topbar/>
+
+            <main>
+                {props.children}
+            </main>
+
+            <Footer/>
+        </>
     )
 }
 
