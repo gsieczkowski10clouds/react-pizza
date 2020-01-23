@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=latin-ext');
 
-:root{
-  --color-primary: #000000;
-  --color-secondary: #FF0000;
-}
+@import "variables";
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -32,11 +29,11 @@ body {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: normal;
-  background: #fff;
+  background: #FFFFFF;
   color: var(--color-primary);
   overflow-x: hidden;
   overflow-y: scroll;
-  min-height: 100vh
+  min-height: 100vh;
 }
 
 body.no-scroll {
@@ -46,5 +43,22 @@ body.no-scroll {
 @media (min-width: 769px) {
   body.no-scroll {
     padding-right:17px
+  }
+}
+
+#root{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+a{
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: color 0.2s ease-in-out;
+
+  &:hover{
+    color: var(--color-accent);
   }
 }

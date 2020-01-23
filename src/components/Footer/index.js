@@ -5,9 +5,15 @@ import styles from './footer.module.scss';
 function Footer() {
 
     return (
-        <div className={styles.Footer}>
-            FOOTER
-        </div>
+        <footer className={styles.Footer}>
+            <div className="container">
+                <div className="row">
+                    <div className="col-12 text-center py-5">
+                        Copyright &copy; {(new Date()).getFullYear().toString()}
+                    </div>
+                </div>
+            </div>
+        </footer>
     );
 }
 
