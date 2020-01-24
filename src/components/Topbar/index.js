@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { paths } from "../../routes";
 import { formatRoute } from 'react-router-named-routes';
 
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 import logo from '../../assets/images/logo.svg';
 import styles from './topbar.module.scss';
 
@@ -45,6 +45,17 @@ function Topbar(props) {
                                 <Link className="nav-link" to={formatRoute(paths.guarded)}>Guarded</Link>
                             </li>
                         ) : null}
+                    </ul>
+                    <ul className={['navbar-nav ml-md-auto', styles.social].join(' ')}>
+                        <li className="nav-item">
+                            <a href="https://facebook.com" target="_blank"><FaFacebookF/></a>
+                        </li>
+                        <li className="nav-item">
+                            <a href="https://twitter.com" target="_blank"><FaTwitter/></a>
+                        </li>
+                        <li className="nav-item">
+                            <a href="https://instagram.com" target="_blank"><FaInstagram/></a>
+                        </li>
                     </ul>
                 </div>
 
