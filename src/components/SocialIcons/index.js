@@ -8,13 +8,13 @@ function SocialIcons() {
     return (
         <>
             <li className={["nav-item", styles.socialIcon].join(' ')}>
-                <a href="https://facebook.com" target="_blank"><FaFacebookF/></a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF/></a>
             </li>
             <li className={["nav-item", styles.socialIcon].join(' ')}>
-                <a href="https://twitter.com" target="_blank"><FaTwitter/></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter/></a>
             </li>
             <li className={["nav-item", styles.socialIcon].join(' ')}>
-                <a href="https://instagram.com" target="_blank"><FaInstagram/></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram/></a>
             </li>
         </>
     );

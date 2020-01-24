@@ -13,7 +13,7 @@ function Layout(props){
 
         let scrollEventThrottle = false;
 
-        window.addEventListener('scroll', function(){
+        const handleScroll = () => {
             if( !scrollEventThrottle ){
                 window.requestAnimationFrame( () => {
                     if( window.scrollY > 0 ){
@@ -25,10 +25,13 @@ function Layout(props){
                 })
             }
             scrollEventThrottle = true;
-        });
+        };
+
+        window.addEventListener('scroll', handleScroll);
 
         return () => {
             // component did unmount
+            window.removeEventListener('scroll', handleScroll);
         }
     }, []);
 
