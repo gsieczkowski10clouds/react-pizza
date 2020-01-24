@@ -36,13 +36,20 @@ body {
   min-height: 100vh;
 }
 
-body.no-scroll {
-  overflow: hidden
+body {
+  &.no-scroll {
+    overflow: hidden
+  }
+  &.scrolled{
+
+  }
 }
 
 @media (min-width: 769px) {
-  body.no-scroll {
-    padding-right:17px
+  body{
+    &.no-scroll {
+      padding-right: 17px
+    }
   }
 }
 

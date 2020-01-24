@@ -13,7 +13,13 @@ function Topbar(props) {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleNav = () => {
-        setIsOpen(!isOpen)
+        if( isOpen ){
+            setIsOpen(false);
+            document.getElementsByTagName('body')[0].classList.remove('no-scroll');
+        }else {
+            setIsOpen(true);
+            document.getElementsByTagName('body')[0].classList.add('no-scroll');
+        }
     };
 
     return (

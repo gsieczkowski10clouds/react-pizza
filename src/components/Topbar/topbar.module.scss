@@ -4,7 +4,10 @@
   color: var(--color-on-accent);
   height: 80px;
   position: sticky;
+  left: 0;
+  top: 0;
   z-index: 1000;
+  transition: height 0.2s ease-in-out;
 
   a{
     color: var(--color-secondary);
@@ -67,6 +70,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      transition: height 0.2s ease-in-out, top 0.2s ease-in-out;
 
       ul{
         height: auto;
@@ -117,4 +121,15 @@
     }
   }
 
+}
+
+:global(.scrolled) .Topbar{
+  height: 50px;
+
+  .menu {
+    @media (max-width: 767px) {
+      top: 50px;
+      height: calc(100vh - 50px);
+    }
+  }
 }
