@@ -9,8 +9,10 @@ Button.defaultProps = {
 function Button({theme, className, children}) {
 
     return (
-        <span className={[styles.button, styles[theme], className].join(' ')}>
-            {children}
+        <span className={[styles.buttonHolder, styles[theme], className].join(' ')}>
+            <span className={styles.button}>
+                {children}
+            </span>
         </span>
     );
 }
