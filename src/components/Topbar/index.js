@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux'
+import { Link, withRouter } from 'react-router-dom';
 import { paths } from "../../routes";
 import { formatRoute } from 'react-router-named-routes';
 
@@ -8,7 +8,7 @@ import { FaBars } from 'react-icons/fa';
 import logo from '../../assets/images/logo.svg';
 import styles from './topbar.module.scss';
 
-function Topbar() {
+function Topbar(props) {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -27,13 +27,24 @@ function Topbar() {
                 </button>
 
                 <div className={['collapse', 'navbar-collapse', styles.menu, isOpen ? styles.show : ''].join(' ')}>
-                    <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
+                    <ul className="navbar-nav mx-auto">
+                        <li className={['nav-item', (props.location.pathname===paths.home ? styles.active : '')].join(' ')}>
                             <Link className="nav-link" to={formatRoute(paths.home)}>Home</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to={formatRoute(paths.guarded)}>Guarded</Link>
+                        <li className={['nav-item', (props.location.pathname===paths.about ? styles.active : '')].join(' ')}>
+                            <Link className="nav-link" to={formatRoute(paths.about)}>About</Link>
                         </li>
+                        <li className={['nav-item', (props.location.pathname===paths.menu ? styles.active : '')].join(' ')}>
+                            <Link className="nav-link" to={formatRoute(paths.menu)}>Menu</Link>
+                        </li>
+                        <li className={['nav-item', (props.location.pathname===paths.contact ? styles.active : '')].join(' ')}>
+                            <Link className="nav-link" to={formatRoute(paths.contact)}>Contact</Link>
+                        </li>
+                        {props.isAuth ? (
+                            <li className={['nav-item', (props.location.pathname===paths.guarded ? styles.active : '')].join(' ')}>
+                                <Link className="nav-link" to={formatRoute(paths.guarded)}>Guarded</Link>
+                            </li>
+                        ) : null}
                     </ul>
                 </div>
 
@@ -42,4 +53,10 @@ function Topbar() {
     );
 }
 
-export default Topbar;
+const mapStateToProps = (state) => {
+    return {
+        isAuth: (state.auth.token !== null),
+    }
+};
+
+export default connect(mapStateToProps)(withRouter(Topbar));

@@ -30,6 +30,29 @@
   }
 
   .menu{
+    height: 100%;
+
+    ul{
+      height: 100%;
+      li{
+        margin: 0 5px;
+
+        a{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+        }
+
+        &.active{
+          a{
+            color: var(--color-accent);
+          }
+        }
+
+      }
+    }
+
     @media (max-width: 767px){
       position: fixed;
       left: -200%;

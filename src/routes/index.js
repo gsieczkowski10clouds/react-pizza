@@ -12,10 +12,24 @@ const Guarded = React.lazy( () => {
     return import('../views/Guarded');
 });
 
+const About = React.lazy( () => {
+    return import('../views/About');
+});
+const Menu = React.lazy( () => {
+    return import('../views/Menu');
+});
+const Contact = React.lazy( () => {
+    return import('../views/Contact');
+});
+
 export const paths = {
     home: '/',
     auth: '/auth',
     guarded: '/guarded',
+
+    about: '/about',
+    menu: '/menu',
+    contact: '/contact',
 };
 
 export default (store) => {
@@ -23,6 +37,9 @@ export default (store) => {
     // public routes
     let routes = [
         <Route key={paths.auth} path={paths.auth} render={(props) => <Auth {...props}/>} />,
+        <Route key={paths.about} path={paths.about} render={(props) => <About {...props}/>} />,
+        <Route key={paths.menu} path={paths.menu} render={(props) => <Menu {...props}/>} />,
+        <Route key={paths.contact} path={paths.contact} render={(props) => <Contact {...props}/>} />,
         <Route key={paths.home} path={paths.home} exact component={Home} />
     ];
 
