@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import '../../assets/css/bootstrap.min.css';
-import '../../assets/css/index.scss';
+import '../../assets/css/app.scss';
 
 import Topbar from '../../components/Topbar';
 import Footer from '../../components/Footer';
