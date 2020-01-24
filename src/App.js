@@ -13,7 +13,7 @@ function App() {
         <Provider store={store}>
             <BrowserRouter>
                 <Layout>
-                    <Suspense fallback={ViewLoading}>
+                    <Suspense fallback={<ViewLoading/>}>
                         <Switch>
                             {routes(store)}
                         </Switch>
