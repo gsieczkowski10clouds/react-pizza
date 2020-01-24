@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import '../../assets/css/bootstrap.min.css';
 import '../../assets/css/app.scss';
 
+import SEO from '../../components/SEO';
 import Topbar from '../../components/Topbar';
 import Footer from '../../components/Footer';
 
@@ -37,6 +38,8 @@ function Layout(props){
 
     return(
         <>
+            <SEO/>
+
             <Topbar/>
 
             <main>
