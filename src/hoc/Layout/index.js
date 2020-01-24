@@ -7,7 +7,7 @@ import SEO from '../../components/SEO';
 import Topbar from '../../components/Topbar';
 import Footer from '../../components/Footer';
 
-function Layout(props){
+function Layout({children}){
 
     useEffect( () => {
         // component did mount
@@ -43,7 +43,7 @@ function Layout(props){
             <Topbar/>
 
             <main>
-                {props.children}
+                {children}
             </main>
 
             <Footer/>

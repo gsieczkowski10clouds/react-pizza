@@ -7,17 +7,17 @@ Hero.defaultProps = {
     img: homeBg,
 };
 
-function Hero(props) {
+function Hero({img, big, title, subtitle, children}) {
 
     const style = {
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${props.img}')`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${img}')`,
     };
 
     return (
-        <header className={[styles.header, props.big ? styles.big : ''].join(' ')} style={style}>
-            {props.title ? <h1>{props.title}</h1> : ''}
-            {props.subtitle ? <h2>{props.subtitle}</h2> : ''}
-            {props.children}
+        <header className={[styles.header, big ? styles.big : ''].join(' ')} style={style}>
+            {title ? <h1>{title}</h1> : ''}
+            {subtitle ? <h2>{subtitle}</h2> : ''}
+            {children}
         </header>
     );
 }

@@ -6,11 +6,11 @@ Button.defaultProps = {
     theme: 'dark',
 };
 
-function Button(props) {
+function Button({theme, className, children}) {
 
     return (
-        <span className={[styles.button, styles[props.theme], props.className].join(' ')}>
-            {props.children}
+        <span className={[styles.button, styles[theme], className].join(' ')}>
+            {children}
         </span>
     );
 }
