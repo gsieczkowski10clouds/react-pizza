@@ -54,7 +54,7 @@ function Topbar(props) {
                             </li>
                         ) : null}
                     </ul>
-                    <ul className={['navbar-nav ml-md-auto', styles.social].join(' ')}>
+                    <ul className={['navbar-nav', styles.social].join(' ')}>
                         <SocialIcons/>
                     </ul>
                 </div>
