@@ -2,4 +2,14 @@
   background: #000000;
   color: #FFFFFF;
   margin-top: auto;
+
+  .social{
+    margin: 0;
+    
+    li{
+      display: inline-block;
+      margin: 0 5px;
+    }
+  }
+
 }

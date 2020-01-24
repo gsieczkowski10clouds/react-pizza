@@ -4,38 +4,7 @@ function Home() {
 
     return (
         <div>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
-            HOME<br/>
+            HOME
         </div>
     );
 }
