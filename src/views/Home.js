@@ -9,6 +9,7 @@ import Gallery from "../components/sections/home/Gallery";
 import { paths } from "../routes";
 
 import homeBg from '../assets/images/homeBg.jpeg';
+import MenuShort from "../components/sections/home/MenuShort";
 
 function Home() {
 
@@ -24,6 +25,8 @@ function Home() {
             <QuickInfo/>
 
             <Gallery/>
+
+            <MenuShort/>
 
         </div>
     );
