@@ -11,7 +11,7 @@ function Product( {img, name, info, price} ) {
                 <h3 className={styles.name}>{name}</h3>
                 <p className={styles.info}>{info}</p>
             </div>
-            <div className={styles.price}>${price}</div>
+            <div className={styles.price}>${price.toFixed(2)}</div>
         </div>
     );
 }

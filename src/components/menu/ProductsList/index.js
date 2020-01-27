@@ -1,26 +1,47 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 
 import Product from '../Product';
 
-import styles from './productslist.module.scss';
+import * as actions from '../../../store/actions';
 
+import styles from './productslist.module.scss';
 import burger from '../../../assets/images/menu/burger.jpeg';
 
-function ProductsList() {
+function ProductsList( { products, loading, getProducts }) {
+
+    useEffect( () => {
+        getProducts();
+    }, [getProducts]);
 
     return (
-        <div className="row my-3">
+        <div className="row my-5">
             <div className="col-12">
                 <div className={styles.productsList}>
-                    <Product key={1} img={burger} name={'zzz'} info={'lorem...'} price={25}/>
-                    <Product key={2} img={burger} name={'zzz'} info={'lorem...'} price={25}/>
-                    <Product key={3} img={burger} name={'zzz'} info={'lorem...'} price={25}/>
-                    <Product key={4} img={burger} name={'zzz'} info={'lorem...'} price={25}/>
-                    <Product key={5} img={burger} name={'zzz'} info={'lorem...'} price={25}/>
+                    {products.filter( (item) => {
+                        return item.featured;
+                    }).map( (item) => {
+                        return (
+                            <Product key={item.id} img={burger} name={item.name} info={item.ingredients} price={item.price}/>
+                        );
+                    })}
                 </div>
             </div>
         </div>
     );
 }
 
-export default ProductsList;
+const mapStateToProps = (state) => {
+    return {
+        loading: state.products.loading,
+        products: state.products.list,
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getProducts: () => dispatch( actions.getProducts() ),
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsList);
