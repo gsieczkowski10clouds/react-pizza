@@ -14,7 +14,7 @@ function Gallery() {
         <section className={styles.gallery}>
 
             <div className={styles.item}>
-                <LazyLoad placeholder={<img src={imgPlaceholder} alt="awesome pizza 1"/>}>
+                <LazyLoad placeholder={<img src={imgPlaceholder} alt="awesome pizza"/>}>
                     <img src={img1} alt="img"/>
                 </LazyLoad>
                 <p className={styles.info}>
@@ -23,20 +23,20 @@ function Gallery() {
             </div>
 
             <div className={styles.item}>
-                <LazyLoad placeholder={<img src={imgPlaceholder} alt="awesome pizza 2"/>}>
+                <LazyLoad placeholder={<img src={imgPlaceholder} alt="awesome pork"/>}>
                     <img src={img2} alt="img"/>
                 </LazyLoad>
                 <p className={styles.info}>
-                    awesome pizza
+                    awesome pork
                 </p>
             </div>
 
             <div className={styles.item}>
-                <LazyLoad placeholder={<img src={imgPlaceholder} alt="awesome pizza 3"/>}>
+                <LazyLoad placeholder={<img src={imgPlaceholder} alt="awesome steak"/>}>
                     <img src={img3} alt="img"/>
                 </LazyLoad>
                 <p className={styles.info}>
-                    awesome pizza
+                    awesome steak
                 </p>
             </div>
 
