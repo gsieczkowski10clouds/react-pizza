@@ -6,9 +6,8 @@ import Product from '../Product';
 import * as actions from '../../../store/actions';
 
 import styles from './productslist.module.scss';
-import burger from '../../../assets/images/menu/burger.jpeg';
 
-function ProductsList( { products, loading, getProducts }) {
+function ProductsList( { featured, products, loading, getProducts }) {
 
     useEffect( () => {
         getProducts();
@@ -19,10 +18,10 @@ function ProductsList( { products, loading, getProducts }) {
             <div className="col-12">
                 <div className={styles.productsList}>
                     {products.filter( (item) => {
-                        return item.featured;
+                        return featured ? item.featured : true;
                     }).map( (item) => {
                         return (
-                            <Product key={item.id} img={burger} name={item.name} info={item.ingredients} price={item.price}/>
+                            <Product key={item.id} {...item}/>
                         );
                     })}
                 </div>

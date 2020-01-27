@@ -9,7 +9,7 @@ import Gallery from "../components/sections/home/Gallery";
 import { paths } from "../routes";
 
 import homeBg from '../assets/images/homeBg.jpeg';
-import MenuShort from "../components/sections/home/MenuShort";
+import FeaturedMenu from "../components/sections/home/FeaturedMenu";
 
 function Home() {
 
@@ -26,7 +26,7 @@ function Home() {
 
             <Gallery/>
 
-            <MenuShort/>
+            <FeaturedMenu/>
 
         </div>
     );

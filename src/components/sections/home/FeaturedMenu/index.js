@@ -21,7 +21,7 @@ function MenuShort() {
                     </div>
                 </div>
 
-                <ProductsList/>
+                <ProductsList featured/>
 
                 <div className="row">
                     <div className="col-12">
